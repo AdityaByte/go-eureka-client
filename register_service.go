@@ -8,20 +8,21 @@ import (
 	"net/http"
 )
 
-func registerService(serviceName string, ipAddr string, host string, port int) error {
+func registerService(instanceId string, serviceName string, ipAddr string, host string, port int) error {
 	register_payload := RegisterPayload{
+		InstanceId: instanceId,
 		HostName:   host,
 		App:        serviceName,
 		IpAddr:     ipAddr,
 		VipAddress: serviceName,
 		Status:     "UP",
 		Port: Port{
-			Port: port,
+			Port:    port,
 			Enabled: "true",
 		},
 		DataCenterInfo: DataCenterInfo{
 			Class: "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
-			Name: "MyOwn",
+			Name:  "MyOwn",
 		},
 	}
 

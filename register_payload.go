@@ -5,6 +5,7 @@ type InstancePayload struct {
 }
 
 type RegisterPayload struct {
+	InstanceId     string         `json:"instanceId"`
 	HostName       string         `json:"hostName"`
 	App            string         `json:"app"`
 	IpAddr         string         `json:"ipAddr"`
