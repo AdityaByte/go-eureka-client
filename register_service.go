@@ -51,6 +51,6 @@ func registerService(instanceId string, serviceName string, ipAddr string, host 
 
 	defer resp.Body.Close()
 
-	log.Println("Response status: %s", resp.Status)
+	log.Println("Response status:", resp.Status)
 	return nil
 }
